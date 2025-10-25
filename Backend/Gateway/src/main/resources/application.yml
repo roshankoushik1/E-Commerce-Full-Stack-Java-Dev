@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      # REMOVE globalcors block since you are using the CorsWebFilter bean in Java!
+      routes:
+        - id: Hero
+          uri: lb://Hero
+          predicates:
+            - Path=/api/hero
+        - id: Category
+          uri: lb://Category
+          predicates:
+            - Path=/categories/**
+        - id: NewArrivalss
+          uri: lb://NewArrivalss
+          predicates:
+            - Path=/api/products/**
+        - id: Explores
+          uri: lb://Explores
+          predicates:
+            - Path=/api/Explores/**
+        - id: ExploreAll
+          uri: lb://ExploreAll
+          predicates:
+            - Path=/api/allproducts/**
+        - id: Offer
+          uri: lb://Offer
+          predicates:
+            - Path=/api/offers/**
+        - id: TrackOrder
+          uri: lb://TrackOrder
+          predicates:
+            - Path=/orders
+        - id: Checkout
+          uri: lb://Checkout
+          predicates:
+            - Path=/api/checkout
+        - id: login
+          uri: lb://logins
+          predicates:
+            - Path=/api/auth/**
+        - id: CartAPI
+          uri: lb://CartAPISS
+          predicates:
+            - Path=/api/cart/**
+            - Path=/api/offers/**
+            - Path=/api/wishlist/**
+            - Path=/bills/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+server:
+  port: 8305
