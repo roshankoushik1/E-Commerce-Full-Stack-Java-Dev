@@ -1,0 +1,71 @@
+/* Import base styles from Login.css and extend for Signup */
+@import '../Login/Login.css';
+
+/* Signup specific popup content */
+.signup-popup {
+  max-width: 460px;
+  padding: 18px 22px 22px 22px;
+}
+
+/* Signup Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Name Row for First Name and Last Name */
+.name-row {
+  display: flex;
+  gap: 12px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+/* Name field specific styling */
+.half-width .form-input {
+  font-size: 14px;
+}
+
+.half-width .form-input::placeholder {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* Signup specific responsive design */
+@media (max-width: 600px) {
+  .name-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .half-width {
+    flex: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-popup {
+    max-width: none;
+    padding: 14px 18px 18px 18px;
+  }
+  
+  .signup-form {
+    gap: 10px;
+  }
+  
+  .name-row {
+    gap: 10px;
+  }
+  
+  .half-width .form-input {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 10px 12px;
+  }
+  
+  .half-width .form-input::placeholder {
+    font-size: 14px;
+  }
+}

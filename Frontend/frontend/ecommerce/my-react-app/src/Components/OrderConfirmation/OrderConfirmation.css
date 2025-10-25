@@ -1,0 +1,55 @@
+.oc-page {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.oc-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  max-width: 390px;
+  width: 100%;
+  padding: 32px 20px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(16, 16, 16, 0.194);
+}
+
+.oc-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #e5e7eb;
+}
+
+.oc-icon { width: 40px; height: 40px; object-fit: contain; }
+
+.oc-title { font-size: 28px; font-weight: 800; margin-top: 16px; margin-bottom: 14px; color: #111827; }
+.oc-sub { margin: 0; color: #4b5563; font-size: 13px; }
+.oc-order { color: #633194; cursor: pointer; text-decoration: underline; }
+.oc-desc { color: #6b7280; margin: 6px 0 16px; font-size: 13px; }
+
+.oc-divider { height: 1px; background: #e5e7eb; margin: 10px 0 16px; }
+
+.oc-help { color: #374151; margin-bottom: 16px; font-size: 14px; }
+
+.oc-actions { display: flex; gap: 12px; justify-content: center; }
+
+.btn-secondary { background: #fff; border: 1px solid #d1d5db; padding: 10px 14px; cursor: pointer; font-size: 14px; }
+.btn-primary { background: #633194; color: #fff; border: none;  padding: 10px 14px; cursor: pointer; font-size: 14px; }
+
+@media (max-width: 640px) {
+  .oc-card { padding: 48px 14px 16px; max-width: 92%; }
+  .oc-title { font-size: 24px; }
+  .oc-actions { flex-direction: column; }
+}
