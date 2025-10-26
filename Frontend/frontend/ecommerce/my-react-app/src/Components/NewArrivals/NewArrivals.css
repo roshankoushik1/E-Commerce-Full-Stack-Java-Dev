@@ -1,0 +1,256 @@
+.new-arrivals {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.new-arrivals-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.new-arrivals-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.products-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-arrow {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.nav-arrow:hover {
+  background: #333;
+  color: white;
+  border-color: #333;
+  transform: scale(1.1);
+}
+
+.nav-arrow:active {
+  transform: scale(0.95);
+}
+
+.products-wrapper {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.products-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
+}
+
+.product-card {
+  flex: 0 0 calc(25% - 15px);
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-container {
+  position: relative;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.new-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4757;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.product-actions {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-actions {
+  opacity: 1;
+}
+
+.action-btn {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  background: #333;
+  color: white;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-names {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  min-height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-pricings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.original-prices {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.current-prices {
+  color: #633194;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .product-card {
+    flex: 0 0 calc(33.333% - 13px);
+  }
+  
+  .products-track {
+    transform: translateX(-33.333%);
+  }
+}
+
+@media (max-width: 768px) {
+  .new-arrivals {
+    padding: 40px 15px;
+  }
+  
+  .new-arrivals-header h2 {
+    font-size: 2rem;
+  }
+  
+  .product-card {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+  .products-track {
+    gap: 15px;
+  }
+  
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .product-image {
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #f8f9fa;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-container {
+    gap: 10px;
+  }
+  
+  .product-card {
+    flex: 0 0 calc(100% - 10px);
+    padding: 15px;
+  }
+  
+  .product-actions {
+    opacity: 1;
+  }
+  
+  .product-image {
+    height: 180px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #f8f9fa;
+  }
+  
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
